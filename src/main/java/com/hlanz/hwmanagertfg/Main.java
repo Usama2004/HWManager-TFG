@@ -19,9 +19,15 @@ public class Main extends Application {
         FXMLLoader loader1 = new FXMLLoader(getClass().getResource("view1.fxml"));
         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("view2.fxml"));
 
+        // Cargar las vistas y verificar los tipos
+        Node view1 = loader1.load();
+        Node view2 = loader2.load();
+        System.out.println("view1 class: " + view1.getClass().getName());
+        System.out.println("view2 class: " + view2.getClass().getName());
 
-// Añadir las vistas al StackPane
-        rootPane.getChildren().addAll(loader1.load(), loader2.load());
+        // Añadir las vistas al StackPane
+        rootPane.getChildren().addAll(view1, view2);
+
         // Obtener los controladores de las vistas
         View1Controller controller1 = loader1.getController();
         controller1.setMainApp(this); // Pasar la referencia de MainApp al controlador de la vista 1
