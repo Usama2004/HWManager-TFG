@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 
 <!-- Definir el VBox como el contenedor principal de la vista -->
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.hlanz.hwmanagertfg.View2Controller">
-  <!-- Botón para cambiar a la primera vista -->
-  <Button text="Ir a Vista 1" onAction="#handleSwitchToView1"/>
-</VBox>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.View2Controller" />

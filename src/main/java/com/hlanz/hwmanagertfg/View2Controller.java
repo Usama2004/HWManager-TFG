@@ -10,10 +10,4 @@ public class View2Controller {
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
     }
-
-    //Método manejador para cambiar a la primera vista
-    @FXML
-    private void handleSwitchToView1() {
-        mainApp.showView1(); // Llamar al método showView1() de MainApp
-    }
 }
