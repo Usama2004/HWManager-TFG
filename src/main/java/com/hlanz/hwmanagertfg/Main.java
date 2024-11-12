@@ -19,15 +19,26 @@ public class Main extends Application {
         FXMLLoader loader1 = new FXMLLoader(getClass().getResource("loginView.fxml"));
         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("registerView.fxml"));
         FXMLLoader loader3 = new FXMLLoader(getClass().getResource("personalAreaView.fxml"));
-        FXMLLoader loader4 = new FXMLLoader(getClass().getResource("createPersonalAreaView.fxml"));
+        FXMLLoader loader4 = new FXMLLoader(getClass().getResource("crearTarea_PersonalAreaView.fxml"));
+        FXMLLoader loader5 = new FXMLLoader(getClass().getResource("groupView.fxml"));
+        FXMLLoader loader6 = new FXMLLoader(getClass().getResource("createGroupView.fxml"));
+        FXMLLoader loader7 = new FXMLLoader(getClass().getResource("contenidoGrupoView.fxml"));
+        FXMLLoader loader8 = new FXMLLoader(getClass().getResource("crearApartadoGrupoView.fxml"));
+        FXMLLoader loader9 = new FXMLLoader(getClass().getResource("calendarioView.fxml"));
 
-        // Cargar las vistas y verificar los tipos
+        // Cargar las vistas
         Node view1 = loader1.load();
         Node view2 = loader2.load();
         Node view3 = loader3.load();
         Node view4 = loader4.load();
+        Node view5 = loader5.load();
+        Node view6 = loader6.load();
+        Node view7 = loader7.load();
+        Node view8 = loader8.load();
+        Node view9 = loader9.load();
         // Añadir las vistas al StackPane
-        rootPane.getChildren().addAll(view1, view2, view3, view4);
+        rootPane.getChildren().addAll(view1, view2, view3, view4, view5, view6, view7,
+                view8, view9);
 
         // Obtener los controladores de las vistas
         loginController controller1 = loader1.getController();
@@ -39,8 +50,23 @@ public class Main extends Application {
         personalAreaController controller3 = loader3.getController();
         controller3.setMainApp(this);
 
-        createPersonalAreaController controller4 = loader4.getController();
+        crearTarea_PersonalAreaController controller4 = loader4.getController();
         controller4.setMainApp(this);
+
+        groupController controller5 = loader5.getController();
+        controller5.setMainApp(this);
+
+        createGroupController controller6 = loader6.getController();
+        controller6.setMainApp(this);
+
+        contenidoGrupoController controller7 = loader7.getController();
+        controller7.setMainApp(this);
+
+        crearApartadoGrupoController controller8 = loader8.getController();
+        controller8.setMainApp(this);
+
+        calendarioController controller9 = loader9.getController();
+        controller9.setMainApp(this);
         /*
         La razón por la que se usa setMainApp es para pasar una referencia de la clase principal
         Main a los controladores de las vistas. Esto permite que los controladores puedan llamar
@@ -58,10 +84,15 @@ public class Main extends Application {
         */
 
         //Inicialmente, mostrar solo la primera vista
-        ((Node) loader1.getRoot()).setVisible(false);
+        ((Node) loader1.getRoot()).setVisible(true);
         ((Node) loader2.getRoot()).setVisible(false);
         ((Node) loader3.getRoot()).setVisible(false);
-        ((Node) loader4.getRoot()).setVisible(true);
+        ((Node) loader4.getRoot()).setVisible(false);
+        ((Node) loader5.getRoot()).setVisible(false);
+        ((Node) loader6.getRoot()).setVisible(false);
+        ((Node) loader7.getRoot()).setVisible(false);
+        ((Node) loader8.getRoot()).setVisible(false);
+        ((Node) loader9.getRoot()).setVisible(false);
 
         // Crear la escena con el StackPane
         Scene scene = new Scene(rootPane, 675, 460);
@@ -77,6 +108,11 @@ public class Main extends Application {
         rootPane.getChildren().get(1).setVisible(false); // Hacer invisible la segunda vista
         rootPane.getChildren().get(2).setVisible(false);
         rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
     }
 
     // Método para mostrar la 2 vista
@@ -85,6 +121,11 @@ public class Main extends Application {
         rootPane.getChildren().get(1).setVisible(true); // Hacer visible la segunda vista
         rootPane.getChildren().get(2).setVisible(false);
         rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
     }
 
     // Método para mostrar la 3 vista
@@ -93,6 +134,11 @@ public class Main extends Application {
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
         rootPane.getChildren().get(2).setVisible(true);
         rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
     }
 
     // Método para mostrar la 4 vista
@@ -101,6 +147,76 @@ public class Main extends Application {
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
         rootPane.getChildren().get(2).setVisible(false);
         rootPane.getChildren().get(3).setVisible(true);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
+    }
+
+    // Método para mostrar la 5 vista
+    public void showView5() {
+        rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
+        rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
+        rootPane.getChildren().get(2).setVisible(false);
+        rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(true);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
+    }
+
+    // Método para mostrar la 6 vista
+    public void showView6() {
+        rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
+        rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
+        rootPane.getChildren().get(2).setVisible(false);
+        rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(true);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
+    }
+
+    // Método para mostrar la 7 vista
+    public void showView7() {
+        rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
+        rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
+        rootPane.getChildren().get(2).setVisible(false);
+        rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(true);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(false);
+    }
+
+    // Método para mostrar la 8 vista
+    public void showView8() {
+        rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
+        rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
+        rootPane.getChildren().get(2).setVisible(false);
+        rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(true);
+        rootPane.getChildren().get(8).setVisible(false);
+    }
+
+    // Método para mostrar la 9 vista
+    public void showView9() {
+        rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
+        rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
+        rootPane.getChildren().get(2).setVisible(false);
+        rootPane.getChildren().get(3).setVisible(false);
+        rootPane.getChildren().get(4).setVisible(false);
+        rootPane.getChildren().get(5).setVisible(false);
+        rootPane.getChildren().get(6).setVisible(false);
+        rootPane.getChildren().get(7).setVisible(false);
+        rootPane.getChildren().get(8).setVisible(true);
     }
 
     public static void main(String[] args) {

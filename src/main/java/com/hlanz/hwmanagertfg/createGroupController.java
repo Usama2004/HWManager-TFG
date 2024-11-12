@@ -1,6 +1,6 @@
 package com.hlanz.hwmanagertfg;
 
-public class createPersonalAreaController {
+public class createGroupController {
 
     private Main mainApp; // Referencia a la clase principal MainApp
 
