@@ -29,22 +29,22 @@
                               <Image url="@../../../images/acceso.png" />
                            </image>
                         </ImageView>
-                        <TextField promptText="User">
+                        <TextField fx:id="textField_user" promptText="User">
                            <VBox.margin>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField layoutX="31.0" layoutY="99.0" promptText="Password">
+                        <TextField fx:id="textField_password" layoutX="31.0" layoutY="99.0" promptText="Password">
                            <VBox.margin>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <Button maxWidth="257.33" minWidth="257.33" mnemonicParsing="false" prefWidth="257.33" style="-fx-background-color: #9ee4fa;" text="Iniciar Sesión">
+                        <Button maxWidth="257.33" minWidth="257.33" mnemonicParsing="false" onAction="#button_login_pulsado" prefWidth="257.33" style="-fx-background-color: #9ee4fa;" text="Iniciar Sesión">
                            <VBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="134.0" layoutY="179.0" maxWidth="257.33" minWidth="257.33" mnemonicParsing="false" prefWidth="257.33" style="-fx-background-color: #f78383;" text="Registrarse">
+                        <Button layoutX="134.0" layoutY="179.0" maxWidth="257.33" minWidth="257.33" mnemonicParsing="false" onAction="#button_register_pulsado" prefWidth="257.33" style="-fx-background-color: #f78383;" text="Registrarse">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
