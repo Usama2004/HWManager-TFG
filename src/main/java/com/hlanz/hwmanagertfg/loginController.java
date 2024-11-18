@@ -1,11 +1,15 @@
 package com.hlanz.hwmanagertfg;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import java.sql.*;
 
-public class loginController {
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
+
+public class loginController implements Initializable {
 
     private Main mainApp; // Referencia a la clase principal MainApp
     private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
@@ -24,7 +28,7 @@ public class loginController {
         String txt_password = textField_password.getText();
 
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
-            String query = "SELECT * FROM Usuario WHERE Usuario = ? AND Contrasena = ?";
+            String query = "SELECT * FROM Usuario WHERE Usuario = ? AND Contrasenia = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, txt_usuario);
             statement.setString(2, txt_password);
@@ -55,11 +59,16 @@ public class loginController {
 
     @FXML
     void button_register_pulsado() {
-
+        mainApp.showRegisterView();
     }
 
     // Método para establecer la referencia a MainApp
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
+    }
+
+    @Override
+    public void initialize(java.net.URL url, ResourceBundle resourceBundle) {
+
     }
 }
