@@ -10,13 +10,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private StackPane rootPane; // El StackPane principal que contendrá todas las vistas
+    //Este el StackPane principal que contendrá todas las vistas
+    private StackPane rootPane;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        rootPane = new StackPane(); // Inicializar el StackPane
+        //Inicializamos el StackPane
+        rootPane = new StackPane();
 
-        // Cargar las vistas desde los archivos FXML
+        // Cargarmos las vistas desde los archivos FXML
         FXMLLoader login = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/loginView.fxml"));
         FXMLLoader register = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/registerView.fxml"));
         FXMLLoader personalArea = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/personalAreaView.fxml"));
@@ -27,7 +29,7 @@ public class Main extends Application {
         FXMLLoader crearApartadoGrupo = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/crearApartadoGrupoView.fxml"));
         FXMLLoader calendario = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/calendarioView.fxml"));
 
-        // Cargar las vistas
+        //Almacenamos las vistas en variables tipo Node para poder trabajar con ellas
         Node loginView = login.load();
         Node registerView = register.load();
         Node personalAreaView = personalArea.load();
@@ -37,7 +39,9 @@ public class Main extends Application {
         Node contenidoGrupoView = contenidoGroup.load();
         Node crearApartadoGrupoView = crearApartadoGrupo.load();
         Node calendarioView = calendario.load();
-        // Añadir las vistas al StackPane
+
+        // Añadimos las vistas al StackPane para poder mostrar unas y ocultar otras en base a
+        //nuestras preferencias.
         rootPane.getChildren().addAll(loginView, registerView, personalAreaView,
                 crearTareaPersonalAreaView, groupView, createGroupView, contenidoGrupoView,
                 crearApartadoGrupoView, calendarioView);
@@ -70,22 +74,24 @@ public class Main extends Application {
         calendarioController calendarioController = calendario.getController();
         calendarioController.setMainApp(this);
         /*
-        La razón por la que se usa setMainApp es para pasar una referencia de la clase principal
-        Main a los controladores de las vistas. Esto permite que los controladores puedan llamar
-        a los métodos de MainApp para cambiar entre las vistas. Aquí tienes una explicación
-        detallada:
+        La razón por la que se usa setMainApp es para pasar una referencia de la clase
+        principal Main a los controladores. Esto permite que los controladores
+        puedan llamar a los métodos del Main para cambiar entre las vistas.
 
-        ¿Por qué pasar la referencia de MainApp?
-        - Acceso a Métodos de Cambio de Vista: Los controladores necesitan llamar a los métodos
-        showView1() y showView2() de MainApp para cambiar entre las vistas. Al pasar la referencia
-        de MainApp, los controladores pueden acceder a estos métodos.
+        RAZONES POR LAS QUE SE DEBE PASAR UNA REFERENCIA DE MAIN A LOS CONTROLADORES:
 
-        - Comunicación entre Controladores y MainApp: Esto facilita la comunicación entre los
-        controladores y la clase principal, permitiendo una mejor gestión de las vistas y la
-        lógica de la aplicación.
+        - Acceso a Métodos de Cambio de Vista: Los controladores necesitan llamar a los
+        métodos showView1().....showView¿?() del Main para cambiar entre las vistas. Al pasar
+        la referencia de Main, los controladores pueden acceder a estos métodos.
+
+        - Comunicación entre Controladores y Main: Esto facilita la comunicación
+        entre los controladores y la clase principal, permitiendo una mejor gestión
+        de las vistas y la lógica de la aplicación.
         */
 
-        //Inicialmente, mostrar solo la primera vista
+        //Tenemos que mostrar una vista en principio, por eso mostramos la vista del login
+        //y ocultmos las demás vistas. Se tiene que hacer el casting a Node debido a que en
+        //principio se tiene un Object por lo cual no podemos acceder al setVisible.
         ((Node) login.getRoot()).setVisible(true);
         ((Node) register.getRoot()).setVisible(false);
         ((Node) personalArea.getRoot()).setVisible(false);
@@ -96,13 +102,14 @@ public class Main extends Application {
         ((Node) crearApartadoGrupo.getRoot()).setVisible(false);
         ((Node) calendario.getRoot()).setVisible(false);
 
-        // Crear la escena con el StackPane
+        // Creamos la escena con el StackPane
         Scene scene = new Scene(rootPane, 675, 460);
         primaryStage.setScene(scene); // Establecer la escena en el escenario principal
         primaryStage.setResizable(false);
         primaryStage.show(); // Mostrar el escenario
     }
 
+    //Metodos para ir cambiando entre las diferentes vistas
 
     // Método para mostrar la 1 vista
     public void showLoginView() {

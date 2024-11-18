@@ -6,13 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class loginController implements Initializable {
-
-    private Main mainApp; // Referencia a la clase principal MainApp
+    // Referencia a la clase principal Main
+    private Main mainApp;
+    // Datos para conectarnos a la BBDD.
     private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
     private static final String USER = "root";
     private static final String PASSWORD = "Edahabi2004";
@@ -37,8 +37,13 @@ public class loginController implements Initializable {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                // Credenciales correctas, guardar el ID y nombre del usuario en la sesión
+                //Si las credenciales son correctas, guardamos el ID y el nombre del usuario
                 int userId = resultSet.getInt("ID_usuario");
+
+                //UserSession es una clase Singleton que he creado la cual me va a servir
+                //para mostrar siempre la información correspondiente en base al usuario.
+                //cuando estemos navegando entre ventanas. Modificamos el ID y el Nombre
+                //de la una instancia que hay de UserSession.
                 UserSession.getInstance().setUserId(userId);
                 UserSession.getInstance().setUsername(txt_usuario);
                 System.out.println("ID: "+UserSession.getInstance().getUserId());

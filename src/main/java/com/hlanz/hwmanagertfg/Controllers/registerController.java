@@ -12,8 +12,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class registerController implements Initializable {
-
-    private Main mainApp; // Referencia a la clase principal MainApp
+    //Referencia a la clase principal Main
+    private Main mainApp;
+    //Datos para conectarnos a la base de datos
     private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
     private static final String USER = "root";
     private static final String PASSWORD = "Edahabi2004";
@@ -53,6 +54,7 @@ public class registerController implements Initializable {
             && !usuario.isEmpty() && !password.isEmpty() && !retypePassword.isEmpty() &&
             password.equals(retypePassword)) {
             try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+                //Si todos los campos estan rellenados y la contraseña esta bien se hace el INSERT.
                 String query = "INSERT INTO Usuario (Usuario, Contrasenia, Nombre, Apellidos, Gmail, Telefono) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setString(1, usuario);
