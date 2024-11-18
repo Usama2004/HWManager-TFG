@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.calendarioController">
+<VBox maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.Controllers.calendarioController">
    <children>
       <HBox alignment="CENTER" prefHeight="107.0" prefWidth="675.0" style="-fx-border-color: black;">
          <VBox.margin>
@@ -45,7 +45,7 @@
                      <children>
                         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/notificacion.png" />
+                              <Image url="@../images/notificacion.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -54,7 +54,7 @@
                      <children>
                         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/usuario.png" />
+                              <Image url="@../images/usuario.png" />
                            </image>
                         </ImageView>
                      </children>

@@ -10,7 +10,7 @@
 
 <!-- Definir el VBox como el contenedor principal de la vista -->
 
-<VBox alignment="CENTER" maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.loginController">
+<VBox alignment="CENTER" maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.Controllers.loginController">
    <children>
       <HBox alignment="CENTER" prefHeight="461.0" prefWidth="680.0" style="-fx-border-color: black;">
          <children>
@@ -26,7 +26,7 @@
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                            <image>
-                              <Image url="@../../../images/acceso.png" />
+                              <Image url="@../images/acceso.png" />
                            </image>
                         </ImageView>
                         <TextField fx:id="textField_user" promptText="User">
@@ -57,7 +57,7 @@
                <children>
                   <ImageView fitHeight="261.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/inicio-de-sesion-de-cuenta-web.png" />
+                        <Image url="@../images/inicio-de-sesion-de-cuenta-web.png" />
                      </image>
                   </ImageView>
                </children>

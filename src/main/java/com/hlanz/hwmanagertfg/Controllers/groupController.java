@@ -1,6 +1,8 @@
-package com.hlanz.hwmanagertfg;
+package com.hlanz.hwmanagertfg.Controllers;
 
-public class personalAreaController {
+import com.hlanz.hwmanagertfg.Main.Main;
+
+public class groupController {
 
     private Main mainApp; // Referencia a la clase principal MainApp
 

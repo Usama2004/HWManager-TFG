@@ -1,6 +1,8 @@
-package com.hlanz.hwmanagertfg;
+package com.hlanz.hwmanagertfg.Controllers;
 
-public class calendarioController {
+import com.hlanz.hwmanagertfg.Main.Main;
+
+public class crearApartadoGrupoController {
 
     private Main mainApp; // Referencia a la clase principal MainApp
 

@@ -1,15 +1,17 @@
-package com.hlanz.hwmanagertfg;
+package com.hlanz.hwmanagertfg.Controllers;
 
+import com.hlanz.hwmanagertfg.Main.Main;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class registerController {
+public class registerController implements Initializable {
 
     private Main mainApp; // Referencia a la clase principal MainApp
     private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
@@ -61,13 +63,14 @@ public class registerController {
                 statement.setString(6, telefono);
 
                 int rowsInserted = statement.executeUpdate();
+
                 if (rowsInserted > 0) {
+                    mainApp.showLoginView(); // Volver a la vista de login
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Registro exitoso");
                     alert.setHeaderText("Usuario registrado correctamente");
                     alert.setContentText("El usuario ha sido registrado exitosamente.");
                     alert.showAndWait();
-                    mainApp.showLoginView(); // Volver a la vista de login
                 }
             }catch (SQLException e) {
                 // Error de conexión, mostrar una alerta
@@ -82,7 +85,7 @@ public class registerController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error de registro");
             alert.setHeaderText("No se pudo registrar un nuevo usuario");
-            alert.setContentText("Por favor, verifica que todos los campos estan rellanados " +
+            alert.setContentText("Por favor, verifica que todos los campos estan rellanados \n" +
                     "y que los 2 campos de contraseña sean iguales");
             alert.showAndWait();
         }
@@ -91,5 +94,16 @@ public class registerController {
     //Método para establecer la referencia a MainApp
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
+    }
+
+    @Override
+    public void initialize(java.net.URL url, ResourceBundle resourceBundle) {
+        this.textField_nombre.clear();
+        this.textField_apellidos.clear();
+        this.textField_gmail.clear();
+        this.textField_telefono.clear();
+        this.textField_usuario.clear();
+        this.textField_password.clear();
+        this.textField_repetirPassword.clear();
     }
 }

@@ -1,5 +1,6 @@
-package com.hlanz.hwmanagertfg;
+package com.hlanz.hwmanagertfg.Main;
 
+import com.hlanz.hwmanagertfg.Controllers.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,15 +17,15 @@ public class Main extends Application {
         rootPane = new StackPane(); // Inicializar el StackPane
 
         // Cargar las vistas desde los archivos FXML
-        FXMLLoader login = new FXMLLoader(getClass().getResource("loginView.fxml"));
-        FXMLLoader register = new FXMLLoader(getClass().getResource("registerView.fxml"));
-        FXMLLoader personalArea = new FXMLLoader(getClass().getResource("personalAreaView.fxml"));
-        FXMLLoader crearTareaPersonalArea = new FXMLLoader(getClass().getResource("crearTareaPersonalAreaView.fxml"));
-        FXMLLoader group = new FXMLLoader(getClass().getResource("groupView.fxml"));
-        FXMLLoader createGroup = new FXMLLoader(getClass().getResource("createGroupView.fxml"));
-        FXMLLoader contenidoGroup = new FXMLLoader(getClass().getResource("contenidoGrupoView.fxml"));
-        FXMLLoader crearApartadoGrupo = new FXMLLoader(getClass().getResource("crearApartadoGrupoView.fxml"));
-        FXMLLoader calendario = new FXMLLoader(getClass().getResource("calendarioView.fxml"));
+        FXMLLoader login = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/loginView.fxml"));
+        FXMLLoader register = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/registerView.fxml"));
+        FXMLLoader personalArea = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/personalAreaView.fxml"));
+        FXMLLoader crearTareaPersonalArea = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/crearTareaPersonalAreaView.fxml"));
+        FXMLLoader group = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/groupView.fxml"));
+        FXMLLoader createGroup = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/createGroupView.fxml"));
+        FXMLLoader contenidoGroup = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/contenidoGrupoView.fxml"));
+        FXMLLoader crearApartadoGrupo = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/crearApartadoGrupoView.fxml"));
+        FXMLLoader calendario = new FXMLLoader(getClass().getResource("/com/hlanz/hwmanagertfg/Views/calendarioView.fxml"));
 
         // Cargar las vistas
         Node loginView = login.load();

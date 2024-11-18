@@ -1,11 +1,12 @@
-package com.hlanz.hwmanagertfg;
+package com.hlanz.hwmanagertfg.Controllers;
 
+import com.hlanz.hwmanagertfg.Clases.UserSession;
+import com.hlanz.hwmanagertfg.Main.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
@@ -36,7 +37,14 @@ public class loginController implements Initializable {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                // Credenciales correctas, mostrar la vista de área personal
+                // Credenciales correctas, guardar el ID y nombre del usuario en la sesión
+                int userId = resultSet.getInt("ID_usuario");
+                UserSession.getInstance().setUserId(userId);
+                UserSession.getInstance().setUsername(txt_usuario);
+                System.out.println("ID: "+UserSession.getInstance().getUserId());
+                System.out.println("Usuario: "+UserSession.getInstance().getUsername());
+
+                // Mostrar la vista de área personal
                 mainApp.showPersonalAreaView();
             } else {
                 // Credenciales incorrectas, mostrar una alerta
@@ -69,6 +77,7 @@ public class loginController implements Initializable {
 
     @Override
     public void initialize(java.net.URL url, ResourceBundle resourceBundle) {
-
+        this.textField_user.clear();
+        this.textField_password.clear();
     }
 }

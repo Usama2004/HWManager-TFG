@@ -8,7 +8,7 @@
 
 <!-- Definir el VBox como el contenedor principal de la vista -->
 
-<HBox alignment="CENTER" maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.registerController">
+<HBox alignment="CENTER" maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.Controllers.registerController">
    <children>
       <HBox maxWidth="635.0" minWidth="635.0" prefHeight="442.0" prefWidth="635.0" style="-fx-border-color: black;">
          <children>

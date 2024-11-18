@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.crearApartadoGrupoController">
+<VBox maxHeight="460.0" maxWidth="675.0" minHeight="460.0" minWidth="675.0" prefHeight="460.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlanz.hwmanagertfg.Controllers.crearApartadoGrupoController">
    <children>
       <VBox alignment="CENTER" prefHeight="465.0" prefWidth="675.0" style="-fx-border-color: black;">
          <VBox.margin>
