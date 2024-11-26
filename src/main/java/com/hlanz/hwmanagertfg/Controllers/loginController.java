@@ -5,6 +5,7 @@ import com.hlanz.hwmanagertfg.Main.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -18,7 +19,7 @@ public class loginController implements Initializable {
     private static final String PASSWORD = "Edahabi2004";
 
     @FXML
-    private TextField textField_password;
+    private PasswordField textField_password;
 
     @FXML
     private TextField textField_user;

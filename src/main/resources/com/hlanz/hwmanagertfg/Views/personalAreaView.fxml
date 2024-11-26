@@ -91,7 +91,7 @@
                               </ImageView>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="75.0" style="-fx-background-color: #9ee4fa; -fx-border-color: black;" text="Crear" />
+                        <Button mnemonicParsing="false" onAction="#boton_crearPulsado" prefHeight="33.0" prefWidth="75.0" style="-fx-background-color: #9ee4fa; -fx-border-color: black;" text="Crear" />
                      </children>
                   </HBox>
                   <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #9ee4fa; -fx-border-color: black;" text="Filtros">
@@ -116,7 +116,7 @@
                               </ImageView>
                            </children>
                         </VBox>
-                        <ChoiceBox prefHeight="33.0" prefWidth="143.0" style="-fx-border-color: black;" />
+                        <ChoiceBox fx:id="choicebox_categoria" prefHeight="33.0" prefWidth="143.0" style="-fx-border-color: black;" />
                      </children>
                   </HBox>
                   <HBox layoutX="17.0" layoutY="136.0" prefHeight="33.0" prefWidth="87.0">
@@ -130,18 +130,18 @@
                               </ImageView>
                            </children>
                         </VBox>
-                        <DatePicker prefHeight="33.0" prefWidth="140.0" />
+                        <DatePicker fx:id="datepicker_fecha" prefHeight="33.0" prefWidth="140.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <CheckBox mnemonicParsing="false" prefHeight="33.0" prefWidth="123.0" text="T. Completadas">
+                  <CheckBox fx:id="checkbox_completado" mnemonicParsing="false" prefHeight="33.0" prefWidth="123.0" text="T. Completadas">
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox layoutX="17.0" layoutY="243.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="123.0" text="T. Pendientes">
+                  <CheckBox fx:id="checkbox_pendiente" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="123.0" text="T. Pendientes">
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>

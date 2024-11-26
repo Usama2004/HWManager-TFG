@@ -111,7 +111,7 @@ public class Main extends Application {
 
     //Metodos para ir cambiando entre las diferentes vistas
 
-    // Método para mostrar la 1 vista
+    //Método para mostrar la 1 vista
     public void showLoginView() {
         rootPane.getChildren().get(0).setVisible(true); // Hacer visible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer invisible la segunda vista
@@ -124,7 +124,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 2 vista
+    //Método para mostrar la 2 vista
     public void showRegisterView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(true); // Hacer visible la segunda vista
@@ -137,7 +137,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 3 vista
+    //Método para mostrar la 3 vista
     public void showPersonalAreaView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -150,7 +150,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 4 vista
+    //Método para mostrar la 4 vista
     public void showCrearTareaPersonalAreaView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -163,7 +163,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 5 vista
+    //Método para mostrar la 5 vista
     public void showGroupView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -176,7 +176,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 6 vista
+    //Método para mostrar la 6 vista
     public void showCreateGroupView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -189,7 +189,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 7 vista
+    //Método para mostrar la 7 vista
     public void showContenidoGroupView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -202,7 +202,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 8 vista
+    //Método para mostrar la 8 vista
     public void showCrearApartadoGrupoView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
@@ -215,7 +215,7 @@ public class Main extends Application {
         rootPane.getChildren().get(8).setVisible(false);
     }
 
-    // Método para mostrar la 9 vista
+    //Método para mostrar la 9 vista
     public void showCalendarioView() {
         rootPane.getChildren().get(0).setVisible(false); // Hacer invisible la primera vista
         rootPane.getChildren().get(1).setVisible(false); // Hacer visible la segunda vista
