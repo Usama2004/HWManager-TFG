@@ -1,5 +1,6 @@
 package com.hlanz.hwmanagertfg.Controllers;
 
+import com.hlanz.hwmanagertfg.Clases.DatabaseConnection;
 import com.hlanz.hwmanagertfg.Main.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,10 +14,6 @@ public class registerController implements Initializable {
     //Referencia a la clase principal Main
     private Main mainApp;
     private loginController loginController;
-    //Datos para conectarnos a la base de datos
-    private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
-    private static final String USER = "root";
-    private static final String PASSWORD = "Edahabi2004";
 
     @FXML
     private TextField textField_apellidos;
@@ -57,7 +54,7 @@ public class registerController implements Initializable {
             if (gmail.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
                 // Validar formato del teléfono
                 if (telefono.matches("^[0-9]{7,15}$")) {
-                    try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+                    try (Connection connection = DatabaseConnection.getConnection()) {
                         // Comprobar que el usuario es único
                         String checkUserQuery = "SELECT COUNT(*) FROM Usuario WHERE Usuario = ?";
                         PreparedStatement checkUserStatement = connection.prepareStatement(checkUserQuery);

@@ -148,7 +148,7 @@
                   </CheckBox>
                </children>
             </VBox>
-            <VBox layoutX="11.0" layoutY="11.0" prefHeight="331.0" prefWidth="519.0" style="-fx-border-color: black;">
+            <VBox fx:id="vbox_tareas" layoutX="11.0" layoutY="11.0" prefHeight="331.0" prefWidth="519.0" style="-fx-border-color: black;">
                <HBox.margin>
                   <Insets bottom="10.0" right="10.0" top="10.0" />
                </HBox.margin>

@@ -148,6 +148,10 @@ public class Main extends Application {
         rootPane.getChildren().get(6).setVisible(false);
         rootPane.getChildren().get(7).setVisible(false);
         rootPane.getChildren().get(8).setVisible(false);
+
+        // Llamar al método cargarTareas del controlador
+        personalAreaController personalAreaController = (personalAreaController) rootPane.getChildren().get(2).getUserData();
+        personalAreaController.cargarTareas();
     }
 
     //Método para mostrar la 4 vista

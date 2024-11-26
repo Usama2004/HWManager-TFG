@@ -1,5 +1,6 @@
 package com.hlanz.hwmanagertfg.Controllers;
 
+import com.hlanz.hwmanagertfg.Clases.DatabaseConnection;
 import com.hlanz.hwmanagertfg.Clases.UserSession;
 import com.hlanz.hwmanagertfg.Main.Main;
 import javafx.fxml.FXML;
@@ -29,7 +30,7 @@ public class loginController implements Initializable {
         String txt_usuario = textField_user.getText();
         String txt_password = textField_password.getText();
 
-        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+        try (Connection connection = DatabaseConnection.getConnection()) {
             String query = "SELECT * FROM Usuario WHERE Usuario = ? AND Contrasenia = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, txt_usuario);
