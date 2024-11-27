@@ -12,6 +12,7 @@ public class Main extends Application {
 
     //Este el StackPane principal que contendrá todas las vistas
     private StackPane rootPane;
+    private personalAreaController personalAreaController; // Añadido: Variable de instancia para el controlador
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,7 +33,10 @@ public class Main extends Application {
         //Almacenamos las vistas en variables tipo Node para poder trabajar con ellas
         Node loginView = login.load();
         Node registerView = register.load();
+
         Node personalAreaView = personalArea.load();
+        personalAreaController = personalArea.getController(); // Añadido: Obtener el controlador
+
         Node crearTareaPersonalAreaView = crearTareaPersonalArea.load();
         Node groupView = group.load();
         Node createGroupView = createGroup.load();
@@ -149,9 +153,9 @@ public class Main extends Application {
         rootPane.getChildren().get(7).setVisible(false);
         rootPane.getChildren().get(8).setVisible(false);
 
-        // Llamar al método cargarTareas del controlador
-        personalAreaController personalAreaController = (personalAreaController) rootPane.getChildren().get(2).getUserData();
-        personalAreaController.cargarTareas();
+        personalAreaController.cargarTareas(); // Llamar al método cargarTareas del controlador
+        rootPane.getChildren().forEach(node -> node.setVisible(false));
+        rootPane.getChildren().get(2).setVisible(true); // Mostrar la vista de área personal
     }
 
     //Método para mostrar la 4 vista
