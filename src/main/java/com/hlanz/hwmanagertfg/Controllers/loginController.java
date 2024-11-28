@@ -14,10 +14,8 @@ import java.util.ResourceBundle;
 public class loginController implements Initializable {
     // Referencia a la clase principal Main
     private Main mainApp;
-    // Datos para conectarnos a la BBDD.
-    private static final String URL = "jdbc:mariadb://localhost:3306/hwmanager";
-    private static final String USER = "root";
-    private static final String PASSWORD = "Edahabi2004";
+    private String txt_usuario;
+    private String txt_password;
 
     @FXML
     private PasswordField textField_password;
@@ -39,9 +37,8 @@ public class loginController implements Initializable {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                //Si las credenciales son correctas, guardamos el ID y el nombre del usuario
+                //Si las credenciales son correctas, guardamos el ID del usuario
                 int userId = resultSet.getInt("ID_usuario");
-
                 //UserSession es una clase Singleton que he creado la cual me va a servir
                 //para mostrar siempre la información correspondiente en base al usuario.
                 //cuando estemos navegando entre ventanas. Modificamos el ID y el Nombre

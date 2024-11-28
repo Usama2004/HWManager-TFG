@@ -37,7 +37,7 @@ public class personalAreaController implements Initializable {
 
     @FXML
     void boton_crearPulsado() {
-
+        
     }
 
     //Método para establecer la referencia a MainApp
@@ -74,7 +74,7 @@ public class personalAreaController implements Initializable {
                 String prioridad = resultSet.getString("Prioridad");
                 String estado = resultSet.getString("Estado");
 
-                agregarTarea(nombre, descripcion, fecha, hora, prioridad, estado);
+                this.agregarTarea(nombre, descripcion, fecha, hora, prioridad, estado);
                 contadorTareas++;
             }
         } catch (SQLException e) {
