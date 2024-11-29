@@ -8,6 +8,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
 import java.sql.*;
 import java.util.ResourceBundle;
 
@@ -18,10 +22,26 @@ public class loginController implements Initializable {
     private String txt_password;
 
     @FXML
+    private ImageView img_login;
+
+    @FXML
+    private ImageView img_ordenador;
+
+    @FXML
+    private VBox recuadro_login;
+
+    @FXML
     private PasswordField textField_password;
 
     @FXML
     private TextField textField_user;
+
+    @FXML
+    private VBox vbox_principal_login;
+
+    @FXML
+    private HBox vbox_secundario_login;
+
 
     @FXML
     void button_login_pulsado() {
